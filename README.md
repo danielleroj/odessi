@@ -4,14 +4,18 @@
 
 <!---
 ### <p align="center">[CLICK TO PLAY](https://danielleroj.github.io/spaceman/)</p>
+--->
 
-Cloud Cake Cafe is a spaceman/hangman inspired word game. The game challenges players to decipher hidden words by strategically selecting letters. With each correct guess, letters are revealed while incorrect guesses deplete the limited attempts available. Visual aids, including a gradually revealing progress image and a visible guess count, assist players through the game.
+Odessi will be a web app designed to help users plan and organize their travel itineraries/experiences. Users will be able to create custom travel itineraries. 
 
-### Features
-* **Sequiential Word Progression:** Words follow a sequence from shorter to longer, offering a progressively challenging experience.
-* **Game Over/Restart:** Using all of the limited guesses requires a game restart, adding a memory game element.
-* **End Game Achievement:** Successful playthrough culminate in a congratulatory end-of-game screen.
+### Future Features
+* User authentication with Google Sign-In
+* Create, view, edit, and delete travel itineraries
+* Search for and add locations/attractions
+* Responsive design for mobile and desktop use
+* Deployment on Heroku
 
+<!---
 ## Screenshots
 
 | Description | Screenshot |
@@ -44,10 +48,13 @@ Cloud Cake Cafe is a spaceman/hangman inspired word game. The game challenges pl
         <li>Aim for a flawless completion of the game to reach the game's conclusion.</li>
     </ol>
 </details>
-<details>
+--->
+<detail open>
     <summary> Project Planning Link</summary>
-    Link to full project planning including psuedocode and wireframe on <a href="https://trello.com/b/ac55UcYF/cloud-cake-cafe-spaceman">Trello</a>.
+    Link to full project planning on <a href="https://trello.com/b/TAqh0C3Z/odessi-project-2">Trello</a>.
 </details>
+
+<!---
 <details>
     <summary>Deployment Link</summary>
     <a href="https://danielleroj.github.io/spaceman/">danielleroj.github.io/spaceman/</a>
