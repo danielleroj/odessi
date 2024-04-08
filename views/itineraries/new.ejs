@@ -3,16 +3,16 @@
 <div class="form-container">
      <form action="/itineraries" id="new-itinerary-form" method="POST">
         <label>Trip Title</label>
-        <input type="text">
+        <input type="text" name="title">
         <label>Start Date</label>
-        <input type="date" name="" id="">
+        <input type="date" name="startDate">
         <label>End Date</label>
-        <input type="date">
+        <input type="date" name="endDate">
         <label>Description</label>
-        <textarea name="" id="" cols="30" rows="3">Best trip ever!</textarea>
+        <textarea name="description" id="" cols="30" rows="3">Best trip ever!</textarea>
         <label>Itinerary Item</label>
-        <input type="text" placeholder="Enter location">
-        <button type="submit">Search</button>
+        <input type="text" placeholder="Enter location" name="items">
+        <button type="submit">Submit</button>
     </form>
 </div>
 

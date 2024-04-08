@@ -8,7 +8,7 @@ const itinerarySchema = new Schema(
     endDate: Date,
     description: String,
     items: {
-      type: Schema.Types.ObjectId,
+      type: [String] //Schema.Types.ObjectId,
     },
   },
   {
