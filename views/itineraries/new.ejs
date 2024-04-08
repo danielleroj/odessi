@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<div class="form-container">
+     <form action="/itineraries" id="new-itinerary-form" method="POST">
+        <label>Trip Title</label>
+        <input type="text">
+        <label>Start Date</label>
+        <input type="date" name="" id="">
+        <label>End Date</label>
+        <input type="date">
+        <label>Description</label>
+        <textarea name="" id="" cols="30" rows="3">Best trip ever!</textarea>
+        <label>Itinerary Item</label>
+        <input type="text" placeholder="Enter location">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>

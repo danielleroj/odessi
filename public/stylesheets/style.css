@@ -3,8 +3,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-
-
 h2 {
   text-align: center;
 }
@@ -45,6 +43,11 @@ a {
 
 nav {
   float: right;
+}
+
+.form-container label 
+{
+  display: block;
 }
 
 footer {
