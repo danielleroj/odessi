@@ -1,24 +1,60 @@
 body {
-  padding: 50px;
+  padding: 0 10vmin;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+
+h2 {
+  text-align: center;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
 }
 
 .login {
-  /* display: flex; */
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 34px;
 }
 
 .login img {
-  height: 30px;
+  height: 2.5vmin;
 }
 
 .avatar {
   border-radius: 50%;
-  height: 40px;
+  height: 2.5vmin;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90vmin;
+  margin: auto;
+}
+
+#landing-page-img {
+  width: 50vmin;
+  height: auto;
+  margin-right: 1vmin;
+}
+
+nav {
+  float: right;
+}
+
+footer {
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 0 10vmin;
+    margin: auto;
+    background-color: red;
+  }
 }

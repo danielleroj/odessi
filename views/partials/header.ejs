@@ -9,15 +9,15 @@
 </head>
 <body>
     <nav>
+      <% if (user) { %>
         <a href="/">home</a>    
         &nbsp;|&nbsp;
-        <% if (user) { %>
-          <a href="/logout">log out</a>
-              <img class="avatar" src="<%= user.avatar %>" alt="Avatar" referrerpolicy="no-referrer">
-              <%= user.name %>
-        <% } else { %>
-          <a href="/auth/google" class="login">log in&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-        <% } %>
+        <a href="/logout">log out</a>
+        <img class="avatar" src="<%= user.avatar %>" alt="Avatar" referrerpolicy="no-referrer">
+        <%= user.name %>
+      <% } else { %>
+        <a href="/auth/google" class="login">log in with&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+      <% } %>
       </nav>
     <main>
-        <h1><%= title %></h1>
+        <h1>odessi</h1>
