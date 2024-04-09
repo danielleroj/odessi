@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<h2>It's all in the details</h2>
+<section id="show-page">
+  <div>Title: </div>
+  <div><%= itinerary.title %></div><br>
+  <div>Start Date: </div>
+  <div><%= itinerary.startDate %></div><br>
+  <div>End Date: </div>
+  <div><%= itinerary.endDate %></div><br>
+  <div>Description: </div>
+  <div><%= itinerary.description %></div><br>
+  <div>Itinerary Items: </div>
+  <div><%= itinerary.items %></div><br>
+  <div><a href="/itineraries/<%= itinerary._id %>/edit">Edit Itinerary</a></div>
+  <div><a href="/itineraries/<%= itinerary._id %>?_method=DELETE" onclick="return confirm('Are you sure you want to delete this itinerary?')">Delete Itinerary</a></div>
+</section><br><br>
+
+<%- include('../partials/footer') %>

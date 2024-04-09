@@ -8,8 +8,11 @@ const itinerarySchema = new Schema(
     endDate: Date,
     description: String,
     items: {
-      type: [String] //Schema.Types.ObjectId,
+      type: String //Schema.Types.ObjectId,
     },
+    createdBy: {
+      type: String
+    }
   },
   {
     timestamps: true,
@@ -17,4 +20,4 @@ const itinerarySchema = new Schema(
 );
 
 
-module.exports = mongoose.model("Itinerary", itinerarySchema);
+module.exports = mongoose.model("Itinerary", itinerarySchema); 
