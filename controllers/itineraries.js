@@ -12,10 +12,8 @@ module.exports = {
 
 async function deleteItinerary(req, res) {
   try {
-    console.log('Delete itinerary called');
-    console.log('Itinerary ID:', req.params.id);
-    await Itinerary.findByIdAndDelete(req.params.id);
-    console.log('Itinerary deleted successfully');
+    const deletedItinerary = await Itinerary.findByIdAndDelete(req.params.id);
+    console.log("Deleted itinerary:", deletedItinerary);
     res.redirect("/itineraries");
   } catch (error) {
     console.error("Error deleting itinerary:", error);

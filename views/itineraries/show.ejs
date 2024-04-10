@@ -12,8 +12,13 @@
   <div><%= itinerary.description %></div><br>
   <div>Itinerary Items: </div>
   <div><%= itinerary.items %></div><br>
-  <div><a href="/itineraries/<%= itinerary._id %>/edit">Edit Itinerary</a></div>
-  <div><a href="/itineraries/<%= itinerary._id %>?_method=DELETE" onclick="return confirm('Are you sure you want to delete this itinerary?')">Delete Itinerary</a></div>
+  <div id="itinerary-edit-delete">
+    <a href="/itineraries/<%= itinerary._id %>/edit">Edit Itinerary</a>
+    <form id="delete-form" action="/itineraries/<%= itinerary._id %>?_method=DELETE" method="POST">
+    <input type="hidden" name="method" value="DELETE"> 
+    <input type="submit" value="Delete Itinerary" onclick="return confirm('Are you sure you want to delete this itinerary?')">
+    </form>
+  </div>
 </section><br><br>
 
 <%- include('../partials/footer') %>
