@@ -24,8 +24,7 @@
     <div><%= item.endTime %></div><br>
     <div>Notes: </div>
     <div><%= item.notes %></div><br>
-    <form id="delete-form" action="/itineraries/<%= itinerary._id %>/items/<%= item._id %>?_method=DELETE" method="POST">
-      <input type="hidden" name="method" value="DELETE"> 
+    <form action="/itineraries/<%= itinerary._id %>/items/<%= item._id %>?_method=DELETE" method="POST">
       <input type="submit" value="Delete Item" onclick="return confirm('Are you sure you want to delete this item?')">
       </form>
   <% }); %>
@@ -46,7 +45,7 @@
       <input type="date" name="endTime"><br>
       <label>Notes:</label>
       <input type="text" placeholder="Arrive 15 minutes early..." name="notes"><br>
-      <input type="submit" id="addItemButton" value="Add Item"></button><br>
+      <input type="submit" value="Add Item"></button><br>
    </form>
 </div>
 
