@@ -10,8 +10,49 @@
   <div><%= itinerary.endDate %></div><br>
   <div>Description: </div>
   <div><%= itinerary.description %></div><br>
-  <div>Itinerary Items: </div>
-  <div><%= itinerary.items %></div><br>
+
+  <h3>Itinerary Items: </h3>
+  <% if (items.length)  { %>
+  <% items.forEach(item => { %>
+    <div>Name: </div>
+    <div><%= item.name %></div><br>
+    <div>Location: </div>
+    <div><%= item.location %></div><br>
+    <div>Start Time: </div>
+    <div><%= item.startTime %></div><br>
+    <div>End Time: </div>
+    <div><%= item.endTime %></div><br>
+    <div>Notes: </div>
+    <div><%= item.notes %></div><br>
+    <form id="delete-form" action="/itineraries/<%= itinerary._id %>/items/<%= item._id %>?_method=DELETE" method="POST">
+      <input type="hidden" name="method" value="DELETE"> 
+      <input type="submit" value="Delete Item" onclick="return confirm('Are you sure you want to delete this item?')">
+      </form>
+  <% }); %>
+  <% } else { %>
+    <p>No items created</p>
+  <% } %><br><br>
+  
+  <h4>Add Items</h4>
+  <div class="item-form-container">
+    <form action="/itineraries/<%= itinerary._id %>/items" id="new-item-form" method="POST">
+      <label>Item Name:</label>
+      <input type="text" placeholder="Optional" name="name"><br>
+      <label>Location:</label>
+      <input type="text" placeholder="The Lourve" name="location"><br>
+      <label>Start Time:</label>
+      <input type="date" name="startTime"><br>
+      <label>End Time:</label>
+      <input type="date" name="endTime"><br>
+      <label>Notes:</label>
+      <input type="text" placeholder="Arrive 15 minutes early..." name="notes"><br>
+      <input type="submit" id="addItemButton" value="Add Item"></button><br>
+   </form>
+</div>
+
+
+
+
   <div id="itinerary-edit-delete">
     <a href="/itineraries/<%= itinerary._id %>/edit">Edit Itinerary</a>
     <form id="delete-form" action="/itineraries/<%= itinerary._id %>?_method=DELETE" method="POST">

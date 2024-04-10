@@ -1,22 +1,22 @@
 const express = require("express");
 const router = express.Router();
-
 const itinerariesCtrl = require("../controllers/itineraries");
 const ensureLoggedIn = require("../config/ensureLoggedIn");
 
 // GET /itineraries
-router.get("/", itinerariesCtrl.index);
+router.get("/", ensureLoggedIn, itinerariesCtrl.index);
 // GET /itineraries/new
-router.get("/new", itinerariesCtrl.new);
+router.get("/new", ensureLoggedIn, itinerariesCtrl.new);
 //  GET /itinieraries/:id
-router.get("/:id", itinerariesCtrl.show);
+router.get("/:id", ensureLoggedIn, itinerariesCtrl.show);
 // GET /itineraries/:id/edit
-router.get("/:id/edit", itinerariesCtrl.edit);
+router.get("/:id/edit", ensureLoggedIn, itinerariesCtrl.edit);
 // POST /itineraries
-router.post("/", itinerariesCtrl.create);
+router.post("/", ensureLoggedIn, itinerariesCtrl.create);
 // PUT /itineraries/:id
-router.put("/:id", itinerariesCtrl.update);
+router.put("/:id", ensureLoggedIn, itinerariesCtrl.update);
 // DELETE /itinerararies/:id
-router.delete("/:id", itinerariesCtrl.delete);
+router.delete("/:id", ensureLoggedIn, itinerariesCtrl.delete);
+
 
 module.exports = router;

@@ -10,10 +10,10 @@ module.exports = {
   delete: deleteItinerary,
 };
 
+
 async function deleteItinerary(req, res) {
   try {
-    const deletedItinerary = await Itinerary.findByIdAndDelete(req.params.id);
-    console.log("Deleted itinerary:", deletedItinerary);
+    await Itinerary.findByIdAndDelete(req.params.id);
     res.redirect("/itineraries");
   } catch (error) {
     console.error("Error deleting itinerary:", error);
@@ -44,7 +44,7 @@ async function edit(req, res) {
 async function index(req, res) {
   try {
     const itineraries = await Itinerary.find({ createdBy: req.user.googleId });
-    res.render("itineraries/index", { title: "your itineraries", itineraries });
+    res.render("itineraries/index", { title: "Your Itineraries", itineraries });
   } catch (error) {
     console.error(error);
   }
@@ -52,10 +52,11 @@ async function index(req, res) {
 
 async function show(req, res) {
   try {
-    const itinerary = await Itinerary.findById(req.params.id);
-    res.render("itineraries/show", { title: "Itinerary Details", itinerary });
+    const itinerary = await Itinerary.findById(req.params.id).populate("items");
+    const items = itinerary.items;
+    res.render("itineraries/show", { title: "Itinerary Details", itinerary, items });
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching itinerary details:", error);
   }
 }
 
@@ -65,7 +66,6 @@ function newItinerary(req, res) {
 
 async function create(req, res) {
   try {
-    console.log("Authnenticated user:", req.user);
     req.body.createdBy = req.user.googleId;
     await Itinerary.create(req.body);
     res.redirect("/itineraries");
