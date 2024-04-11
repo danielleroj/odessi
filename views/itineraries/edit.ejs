@@ -10,9 +10,23 @@
         <input type="date" name="endDate" value="<%= itinerary.endDate %>" required>
         <label>Description</label>
         <textarea name="description" id="" cols="30" rows="3"><%= itinerary.description %></textarea>
-        <label>Itinerary Item</label>
-        <input type="text" placeholder="Enter location" name="items" value="<%= itinerary.items %>"><br><br>
+
+        <% if (itinerary.items && itinerary.items.length > 0) { %>
+            <% itinerary.items.forEach(function(item) { %> 
+            <label>Item Name:</label>
+            <input type="text"  name="items[<%= item._id %>][name]" value="<%= item.name %>">
+            <label>Location:</label>
+            <input type="text" name="items[<%= item._id %>][location]" value="<%= item.location %>">
+            <label>Start Time:</label>
+            <input type="date" name="items[<%= item._id %>][startTime]" value="<%= item.startTime %>">
+            <label>End Time:</label>
+            <input type="date" name="items[<%= item._id %>][endTime]" value="<%= item.endTime %>">
+            <label>Notes:</label>
+            <textarea name="items[<%= item._id %>][notes]"><%= item.notes %></textarea>
+       <% }) %>
+        <% } %>
         <button type="submit">Submit</button>
+
     </form>
 </div>
 

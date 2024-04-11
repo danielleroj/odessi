@@ -1,4 +1,5 @@
 const Itinerary = require("../models/itinerary");
+const Item = require("../models/item");
 
 module.exports = {
   index,
@@ -9,7 +10,6 @@ module.exports = {
   update,
   delete: deleteItinerary,
 };
-
 
 async function deleteItinerary(req, res) {
   try {
@@ -31,7 +31,7 @@ async function update(req, res) {
 
 async function edit(req, res) {
   try {
-    const itinerary = await Itinerary.findById(req.params.id);
+    const itinerary = await Itinerary.findById(req.params.id).populate("items");
     res.render("itineraries/edit", {
       title: "Edit Itinerary",
       itinerary: itinerary,
@@ -54,7 +54,11 @@ async function show(req, res) {
   try {
     const itinerary = await Itinerary.findById(req.params.id).populate("items");
     const items = itinerary.items;
-    res.render("itineraries/show", { title: "Itinerary Details", itinerary, items });
+    res.render("itineraries/show", {
+      title: "Itinerary Details",
+      itinerary,
+      items,
+    });
   } catch (error) {
     console.error("Error fetching itinerary details:", error);
   }
