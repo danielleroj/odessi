@@ -1,6 +1,7 @@
 body {
   padding: 0 10vmin;
   font-family: "Alegreya Sans", sans-serif;
+  background-color: #F3ECE1;
 }
 
 h1 {
@@ -27,13 +28,23 @@ a {
 }
 
 .login {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
+  background-color: #F4A261;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .login img {
-  height: 2.5vmin;
+  margin-left: 5px;
+  height: 20px;
+}
+
+.login:hover {
+  background-color: #E37B43;
 }
 
 .avatar {
