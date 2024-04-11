@@ -1,4 +1,3 @@
-const item = require("../models/item");
 const Item = require("../models/item");
 const Itinerary = require("../models/itinerary");
 

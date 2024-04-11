@@ -15,6 +15,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var itinerariesRouter = require("./routes/itineraries");
 var itemsRouter = require("./routes/items");
+var googleRouter = require("./routes/google");
 
 var app = express();
 
@@ -49,6 +50,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/itineraries", itinerariesRouter);
 app.use("/itineraries", itemsRouter);
+app.use("/", googleRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

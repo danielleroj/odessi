@@ -5,10 +5,12 @@
 <section id="show-page">
   <div>Title: </div>
   <div><%= itinerary.title %></div><br>
+  <div>Location: </div>
+  <div><%= itinerary.location %></div><br>
   <div>Start Date: </div>
-  <div><%= new Date(itinerary.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></div><br>
+  <div><%= new Date(itinerary.startDate).toISOString().split('T')[0] %></div><br>
   <div>End Date: </div>
-  <div><%= new Date(itinerary.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></div><br>
+  <div><%= new Date(itinerary.endDate).toISOString().split('T')[0] %></div><br>
   <div>Description: </div>
   <div><%= itinerary.description %></div><br>
 
@@ -41,10 +43,10 @@
       <label>Location:</label>
       <input type="text" placeholder="The Lourve" name="location"><br>
       <label>Start Time:</label>
-      <input type="date" name="startTime"><br>
+      <input type="date" name="startTime" min="<%= itinerary.startDate %>" max="<%= itinerary.endDate %>"><br>
       <label>End Time:</label>
       <input type="date" name="endTime"><br>
-      <label>Notes:</label>
+      <label>Notes:</label><br>
       <textarea placeholder="Arrive 15 minutes early..." name="notes"></textarea><br>
       <input type="submit" value="Add Item"></button><br>
    </form>

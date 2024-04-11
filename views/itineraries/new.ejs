@@ -1,9 +1,13 @@
 <%- include('../partials/header') %>
+<script src="/google-places-api"></script>
+<script src="/javascripts/google.js" async></script>
 
 <div class="form-container">
      <form action="/itineraries" id="new-itinerary-form" method="POST">
         <label>Trip Title</label>
         <input type="text" name="title">
+        <label>Destination:</label>
+        <input id="location-input" type="text" name="location" placeholder="Enter a location">
         <label>Start Date</label>
         <input type="date" name="startDate" required>
         <label>End Date</label>

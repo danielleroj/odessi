@@ -4,6 +4,11 @@ const Schema = mongoose.Schema;
 const itinerarySchema = new Schema(
   {
     title: String,
+    location: {
+      name: String,
+      address: String,
+      description: String
+    },
     startDate: Date,
     endDate: Date,
     description: String,
