@@ -65,6 +65,7 @@ nav ul li {
 
 #welcome-user p {
   margin: 0;
+  font-weight: bold;
 }
 
 .avatar {
@@ -86,14 +87,16 @@ nav ul li {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("/images/kiwihug-qv05FvdE26k-unsplash.jpg");
+  background-size: cover;
   background-color: white;
   border: 1px solid black;
-  max-width: 120vmin;
+  max-width: 200vmin;
   margin: auto;
 }
 
 .container div {
-  /* width: 80vmin; */
+  width: 50vmin;
 }
 
 #landing-page-img {
