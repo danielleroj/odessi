@@ -5,9 +5,9 @@
         <label>Trip Title</label>
         <input type="text" name="title" value="<%= itinerary.title %>">
         <label>Start Date</label>
-        <input type="date" name="startDate" value="<%= itinerary.startDate %>" required>
+        <input type="date" name="startDate" value="<%= new Date(itinerary.startDate).toLocaleDateString('en-CA') %>" required>
         <label>End Date</label>
-        <input type="date" name="endDate" value="<%= itinerary.endDate %>" required>
+        <input type="date" name="endDate" value="<%= new Date(itinerary.endDate).toLocaleDateString('en-CA') %>" required>
         <label>Description</label>
         <textarea name="description" id="" cols="30" rows="3"><%= itinerary.description %></textarea>
 
@@ -18,9 +18,9 @@
             <label>Location:</label>
             <input type="text" name="items[<%= item._id %>][location]" value="<%= item.location %>">
             <label>Start Time:</label>
-            <input type="date" name="items[<%= item._id %>][startTime]" value="<%= item.startTime %>">
+            <input type="date" name="items[<%= item._id %>][startTime]" value="<%= new Date(item.startTime).toLocaleDateString('en-CA') %>">
             <label>End Time:</label>
-            <input type="date" name="items[<%= item._id %>][endTime]" value="<%= item.endTime %>">
+            <input type="date" name="items[<%= item._id %>][endTime]" value="<%= new Date(item.startTime).toLocaleDateString('en-CA') %>">
             <label>Notes:</label>
             <textarea name="items[<%= item._id %>][notes]"><%= item.notes %></textarea>
        <% }) %>

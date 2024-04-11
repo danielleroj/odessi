@@ -6,9 +6,9 @@
   <div>Title: </div>
   <div><%= itinerary.title %></div><br>
   <div>Start Date: </div>
-  <div><%= itinerary.startDate %></div><br>
+  <div><%= new Date(itinerary.startDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></div><br>
   <div>End Date: </div>
-  <div><%= itinerary.endDate %></div><br>
+  <div><%= new Date(itinerary.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></div><br>
   <div>Description: </div>
   <div><%= itinerary.description %></div><br>
 
