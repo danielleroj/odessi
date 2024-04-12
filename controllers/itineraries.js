@@ -59,7 +59,6 @@ async function show(req, res) {
     // group items by date
     items.sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
 
-
     res.render("itineraries/show", {
       title: "Itinerary Details",
       itinerary,

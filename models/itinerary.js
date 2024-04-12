@@ -5,7 +5,7 @@ const itinerarySchema = new Schema(
   {
     title: String,
     location: {
-      name: String,
+      title: String,
       address: String,
       description: String,
     },

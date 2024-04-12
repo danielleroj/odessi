@@ -8,7 +8,10 @@ const itemSchema = new Schema(
       ref: "Itinerary"
     },
     name: String,
-    location: String,
+    location: {
+      name: String,
+      address: String
+    },
     startTime: Date,
     endTime: Date,
     notes: String,

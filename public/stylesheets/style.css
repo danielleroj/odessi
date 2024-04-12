@@ -131,6 +131,29 @@ nav ul li {
   height: 70vmin;
 }
 
+.details-container a {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+#delete-button {
+ width: 15vmin;
+ color: #E84855;
+ font-size: 14px;
+}
+
+#item-buttons {
+  display: flex;
+}
+
+#delete-button:hover, .details-container a:hover {
+  background-color: #8FBF8A;
+  color: white;
+}
+
 #new-itinerary-form, table  {
   background-color: white;
   padding: 20px 40px;
@@ -222,7 +245,12 @@ input, textarea {
   border-radius: 20px;
   padding: 10px;
   margin: 8px 0;
+  width: 30vmin;
   font-family: "Alegreya Sans", sans-serif;
+}
+
+#item-form-container input[type="date"], #new-itinerary-form input[type="date"] {
+  width: 10vmin;
 }
 
 button, input[type=submit] {

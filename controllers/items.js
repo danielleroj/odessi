@@ -10,9 +10,14 @@ module.exports = {
 
 async function create(req, res) {
   try {
+    req.body.location = {
+      name: req.body.locationName,
+      address: req.body.locationAddress,
+    };
     const newItem = new Item(req.body);
+    
+    
     await newItem.save();
-
     const itinerary = await Itinerary.findById(req.params.id);
     itinerary.items.push(newItem._id);
     await itinerary.save();
@@ -32,6 +37,7 @@ async function edit(req, res) {
   try {
     const item = await Item.findById(req.params.id);
     const itineraryId = req.params.itineraryId;
+    
     res.render("items/edit", { title: "Edit Item", item, itineraryId })
   } catch (error) {
     console.error(error);
