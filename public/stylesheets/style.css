@@ -131,7 +131,7 @@ nav ul li {
   height: 70vmin;
 }
 
-#new-itinerary-form, table {
+#new-itinerary-form, table  {
   background-color: white;
   padding: 20px 40px;
   margin: 20px;
@@ -154,11 +154,11 @@ nav ul li {
          1px -1px 0 #000,
         -1px  1px 0 #000,
          1px  1px 0 #000; 
-  height: 47vmin;
+  min-height: 47vmin;
   width: 36vmin;
 }
 
-#details-view {
+#details-view, #edit-itinerary-form {
   background-color: white;
   padding: 20px 40px;
   margin: 20px;
@@ -168,7 +168,7 @@ nav ul li {
          1px -1px 0 #000,
         -1px  1px 0 #000,
          1px  1px 0 #000; 
-  height: 47.5vmin;
+  height: 60vmin;
   width: 50vmin;
   overflow-y: auto;
 }
@@ -193,12 +193,12 @@ nav ul li {
   font-weight: bold;
 }
 
-#details-view::-webkit-scrollbar {
+#details-view::-webkit-scrollbar, #edit-itinerary-form::-webkit-scrollbar {
   background-color: transparent;
   width: 10px;
 }
 
-#details-view::-webkit-scrollbar-thumb {
+#details-view::-webkit-scrollbar-thumb, #edit-itinerary-form::-webkit-scrollbar-thumb {
   border-radius: 20px;
   background-color: #294264;
 }

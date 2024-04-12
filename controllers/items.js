@@ -26,6 +26,7 @@ async function create(req, res) {
 async function edit(req, res) {
   try {
     const item = await Item.findById(req.params.id);
+    const itinerary = await Itinerary.findById
     res.render("itineraries/edit", { item })
   } catch (error) {
     console.error(error);
