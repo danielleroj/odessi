@@ -117,6 +117,10 @@ nav ul li {
   min-height: 75vmin;
 }
 
+#itineraries-index {
+  text-align: center;
+}
+
 #itinerary-title {
   text-align: left;
 }
