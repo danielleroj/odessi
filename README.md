@@ -31,7 +31,7 @@ Odessi is a web application designed to streamline the process of planning and o
 
 <details open>
     <summary> Project Planning Link</summary>
-    Link to full project planning on <a href="">Trello</a>.
+    Link to full project planning on <a href="https://trello.com/b/TAqh0C3Z/project-2">Trello</a>.
 </details>
 <details>
     <summary>Deployment Link</summary>
