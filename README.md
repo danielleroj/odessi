@@ -2,7 +2,7 @@
 
 #### <p align="center">Created by [Danielle Rojas](https://www.linkedin.com/in/daniellerojas1/)</p>
 
-### <p align="center">[CLICK TO PLAY](https://odessi-967addd3317d.herokuapp.com/)</p>
+### <p align="center">[CLICK TO VIEW APP](https://odessi-967addd3317d.herokuapp.com/)</p>
 
 
 Odessi is a web application designed to streamline the process of planning and organizing travel itineraries. With a user-friendly interface, Odessi allows users to easily create, view, update, and delete their itineraries as well as manage individual itinerary items. 
