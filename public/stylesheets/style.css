@@ -167,6 +167,10 @@ nav ul li {
   min-height: 40vmin;
 }
 
+#itinerary-table-message {
+  text-align: center;
+}
+
 #item-form-container {
   background-color: white;
   padding: 20px 40px;

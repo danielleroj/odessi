@@ -12,7 +12,8 @@
       </tr>
     </thead>
     <tbody>
-      <% itineraries.forEach(function(i) { %>
+      <% if (itineraries.length) { %>
+        <% itineraries.forEach(i => { %> 
       <tr>
         <td><%= i.title %></td>
         <td><%= i.startDate.toLocaleDateString() %></td>
@@ -24,6 +25,14 @@
         <td><a href="/itineraries/<%= i._id %>">Itinerary Details</a></td>
       </tr>
       <% }) %>
+      <% } else { %>
+      <tr>
+        <td id="itinerary-table-message" colspan="5">
+          Well, well, well, look who's arrived without a single itinerary!<br>Time to
+          shake a leg and start planning! We're not getting any younger, you know!
+        </td>
+      </tr>
+      <% } %>
     </tbody>
   </table>
 </div>
