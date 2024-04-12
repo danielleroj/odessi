@@ -52,12 +52,28 @@ nav ul li {
 .login {
   display: inline-flex;
   align-items: center;
-  background-color: #F4A261;
+  background-color: #1A3B5D;
   color: white;
   padding: 10px 15px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
+  margin-right: 4vmin;
+}
+
+.login img {
+  margin-left: 5px;
+  height: 20px;
+}
+
+.login:hover {
+  background-color: #294264;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 2.5vmin;
+  margin-right: 10px;
 }
 
 #welcome-user {
@@ -69,21 +85,6 @@ nav ul li {
 #welcome-user p {
   margin: 0;
   font-weight: bold;
-}
-
-.avatar {
-  border-radius: 50%;
-  height: 2.5vmin;
-  margin-right: 10px;
-}
-
-.login img {
-  margin-left: 5px;
-  height: 20px;
-}
-
-.login:hover {
-  background-color: #E37B43;
 }
 
 .container {
