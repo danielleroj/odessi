@@ -35,7 +35,7 @@ Odessi is a web application designed to streamline the process of planning and o
 </details>
 <details>
     <summary>Deployment Link</summary>
-    <a href="https://odessi-967addd3317d.herokuapp.com/">Odessi - Travel App on Heroku/</a>
+    <a href="https://odessi-967addd3317d.herokuapp.com/">Odessi - Travel App on Heroku</a>
 </details>
 
 
