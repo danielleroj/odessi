@@ -2,19 +2,27 @@
 <script src="/google-places-api"></script>
 <script src="/javascripts/google.js" async></script>
 
+<h2>Craft Your Adventure</h2>
 <div class="form-container">
      <form action="/itineraries" id="new-itinerary-form" method="POST">
-        <label>Trip Title</label>
-        <input type="text" name="title">
-        <label>Destination:</label>
-        <input id="location-input" type="text" name="location" placeholder="Enter a location">
-        <label>Start Date</label>
-        <input type="date" name="startDate" required>
-        <label>End Date</label>
-        <input type="date" name="endDate" required>
-        <label>Description</label>
+        <label>Trip Title</label><br>
+        <input type="text" name="title"><br>
+        <label>Destination</label><br>
+        <input id="location-input" type="text" name="location" placeholder="Enter a location"><br>
+        <div class="date-container">
+
+        <div class="date-field">
+            <label>Start Date</label><br>
+            <input type="date" name="startDate" required><br>
+        </div>
+        <div class="date-field">
+            <label>End Date</label><br>
+            <input type="date" name="endDate" required><br>
+        </div>
+    </div>
+        <label>Description</label><br>
         <textarea name="description" cols="30" rows="3" placeholder="Best trip ever!"></textarea><br>
-        <button type="submit">Start Planning</button>
+        <button type="submit">Start Planning!</button>
     </form>
 </div>
 

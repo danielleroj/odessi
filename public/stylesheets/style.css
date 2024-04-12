@@ -1,6 +1,7 @@
 body {
   font-family: "Alegreya Sans", sans-serif;
   background-color: #F3ECE1;
+  font-size: large;
 }
 
 h1 {
@@ -24,6 +25,7 @@ h2 {
 }
 
 a {
+  font-family: "Alegreya Sans SC", sans-serif;
   text-decoration: none;
   font-weight: bold;
   color: black;
@@ -32,14 +34,14 @@ a {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   border-bottom: 1px solid #D8D0C0;
+  padding-left: 4vmin;
 }
 
 nav ul {
   list-style-type: none;
-  padding: 0;
-  padding: 0;
+  padding-left: 8vmin;
 }
 
 nav ul li {
@@ -61,6 +63,7 @@ nav ul li {
 #welcome-user {
   display: flex;
   align-items: center;
+  padding-right: 4vmin;
 }
 
 #welcome-user p {
@@ -90,9 +93,8 @@ nav ul li {
   background-image: url("/images/kiwihug-qv05FvdE26k-unsplash.jpg");
   background-size: cover;
   background-color: white;
-  border: 1px solid black;
   max-width: 200vmin;
-  margin: auto;
+  height: 70vmin;
 }
 
 .container div {
@@ -105,30 +107,117 @@ nav ul li {
   margin-right: 1vmin;
 }
 
-
-.form-container label 
-{
-  display: block;
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/kiwihug-qv05FvdE26k-unsplash.jpg");
+  background-size: cover;
+  height: 70vmin;
 }
 
-footer {
-  text-align: center;
+.details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/kiwihug-qv05FvdE26k-unsplash.jpg");
+  background-size: cover;
+  padding: 20px;
+  height: 70vmin;
+}
+
+#new-itinerary-form, table, .item-form-container {
+  background-color: white;
+  padding: 20px 40px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000; 
+}
+
+#details-view {
+  background-color: white;
+  padding: 20px 40px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000; 
+  height: 46.5vmin;
+  overflow-y: auto;
 }
 
 #itinerary-edit-delete {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("/images/kiwihug-qv05FvdE26k-unsplash.jpg");
+  background-size: cover;
+}
+
+#itinerary-edit-delete a, #itinerary-edit-delete input {
+  font-size: 20px;
 }
 
 #delete-form input {
   border: none;
   background: none;
-  color: red;
+  color: #E84855;
   cursor: pointer;
-  font-size: 15px;
   font-weight: bold;
-  padding-top: 1px;
+}
+
+#details-view::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+}
+
+#details-view::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #294264;
+}
+
+th, td {
+  padding: 0 4vmin;
+}
+
+.date-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-field {
+ flex: 1;
+ margin-right: 10px;
+}
+
+input, textarea {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 8px 0;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+button, input[type=submit] {
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  background-color: white;
+  padding: 10px 16px;
+  margin: 8px 0;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+footer {
+  text-align: center;
 }
 
 @media only screen and (max-width: 768px) {
