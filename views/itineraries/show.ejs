@@ -4,7 +4,7 @@
 
 <h2>It's All in the Details</h2>
 <div class="details-container">
-  <!-- itinerary -->
+  <!-- itinerary view -->
   <div id="details-view">
     <div><h2 id="itinerary-title"><%= itinerary.title %></h2></div>
     <div><%= itinerary.location.name %></div>
@@ -18,7 +18,7 @@
     <div>Description: <%= itinerary.description %></div>
     <br />
 
-    <!-- items -->
+    <!-- items view -->
     <% if (items.length) { %> <% items.forEach(item => { %>
     <div><h4><%= item.name %></h4></div>
     <div><%= item.location.name %></div>
@@ -55,7 +55,7 @@
     <% } %><br /><br />
   </div>
 
-  <!-- add items -->
+  <!-- add items form -->
   <div id="item-form-container">
     <h3>Add Items</h3>
     <form
@@ -114,4 +114,5 @@
     />
   </form>
 </div>
+
 <%- include('../partials/footer') %>
