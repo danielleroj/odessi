@@ -8,9 +8,10 @@
 Odessi is a web application designed to streamline the process of planning and organizing travel itineraries. With a user-friendly interface, Odessi allows users to easily create, view, update, and delete their itineraries as well as manage individual itinerary items. 
 
 ### Features
-* Secure access: Log in securely with Google Sign-In
-* Manage Travel Itineraries: Easily create, view, edit, and delete your travel plans.
-* Location and Attraction Search: Utilize the Google Places API to search for and add locations or attractions to your itineraries.
+* **Secure access**: Log in securely with Google Sign-In
+* **Personalized Experience**: View only your own itineraries when signed in, ensuring privacy and personalized content.
+* **Manage Travel Itineraries**: Easily create, view, edit, and delete your travel plans.
+* **Location and Attraction Search**: Utilize the Google Places API to search for and add locations or attractions to your itineraries.
 
 ## Screenshots
 
