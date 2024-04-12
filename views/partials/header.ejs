@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" href="/images/odessi-logo.ico" type="image/x-icon">
+    <link rel="icon" href="/images/odessi-logo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,15 +24,23 @@
         <li><a href="/itineraries">your itineraries</a></li>
         <li><a href="/logout">log out</a></li>
       </ul>
-        <% } else { %>
-        <a href="/auth/google" class="login"><img src="https://i.imgur.com/FHjYyi0.png" />&nbsp;&nbsp;Sign in with Google</a>
-        <% } %>
+      <% } else { %>
+      <a href="/auth/google" class="login"
+        ><img src="https://i.imgur.com/FHjYyi0.png" />&nbsp;&nbsp;Sign in with
+        Google</a
+      >
+      <% } %>
     </nav>
     <% if (user) { %>
-      <div id="welcome-user">
-        <img class="avatar" src="<%= user.avatar %>" alt="Avatar" referrerpolicy="no-referrer"/>
-        <p>Welcome back, <%= user.name %>!</p>
-      </div>
-        <% } %>
+    <div id="welcome-user">
+      <img
+        class="avatar"
+        src="<%= user.avatar %>"
+        alt="Avatar"
+        referrerpolicy="no-referrer"
+      />
+      <p>Welcome back, <%= user.name %>!</p>
+    </div>
+    <% } %>
   </header>
 </html>

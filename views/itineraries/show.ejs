@@ -4,6 +4,7 @@
 
 <h2>It's All in the Details</h2>
 <div class="details-container">
+  <!-- itinerary -->
   <div id="details-view">
     <div><h2 id="itinerary-title"><%= itinerary.title %></h2></div>
     <div><%= itinerary.location.name %></div>
@@ -17,6 +18,7 @@
     <div>Description: <%= itinerary.description %></div>
     <br />
 
+    <!-- items -->
     <% if (items.length) { %> <% items.forEach(item => { %>
     <div><h4><%= item.name %></h4></div>
     <div><%= item.location.name %></div>
@@ -41,9 +43,9 @@
           value="Delete Item"
           onclick="return confirm('Are you sure you want to delete this item?')"
         />
+      </form>
     </div>
-      <% }) %>
-    </form>
+    <% }) %>
     <br />
     <% } else { %>
     <p>
@@ -53,6 +55,7 @@
     <% } %><br /><br />
   </div>
 
+  <!-- add items -->
   <div id="item-form-container">
     <h3>Add Items</h3>
     <form
@@ -64,13 +67,13 @@
       <input type="text" placeholder="Optional" name="name" /><br />
       <label>Location</label><br />
       <input
-      id="item-autocomplete"
-      type="text"
-      name="location[name]"
-      placeholder="Enter a location"
-    /><br />
-    <input type="hidden" name="locationName" id="itemLocationName" />
-    <input type="hidden" name="locationAddress" id="itemLocationAddress">
+        id="item-autocomplete"
+        type="text"
+        name="location[name]"
+        placeholder="Enter a location"
+      /><br />
+      <input type="hidden" name="locationName" id="itemLocationName" />
+      <input type="hidden" name="locationAddress" id="itemLocationAddress" />
 
       <div class="date-container">
         <div class="date-field">
@@ -95,6 +98,7 @@
   </div>
 </div>
 
+<!-- buttons -->
 <div id="itinerary-edit-delete">
   <a href="/itineraries/<%= itinerary._id %>/edit">Edit Itinerary</a>
   <form

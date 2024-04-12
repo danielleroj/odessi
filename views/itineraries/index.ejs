@@ -12,15 +12,18 @@
       </tr>
     </thead>
     <tbody>
-       <% itineraries.forEach(function(i) { %>
-         <tr>
-             <td><%= i.title %></td>
-             <td><%= i.startDate.toLocaleDateString() %></td>
-             <td><%= new Date(i.endDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></td>
-             <td><%= i.description %></td>
-             <td><a href="/itineraries/<%= i._id %>">Itinerary Details</a></td>
-           </tr>
-       <% }) %> 
+      <% itineraries.forEach(function(i) { %>
+      <tr>
+        <td><%= i.title %></td>
+        <td><%= i.startDate.toLocaleDateString() %></td>
+        <td>
+          <%= new Date(i.endDate).toLocaleDateString('en-US', { year: 'numeric',
+          month: 'long', day: 'numeric' }) %>
+        </td>
+        <td><%= i.description %></td>
+        <td><a href="/itineraries/<%= i._id %>">Itinerary Details</a></td>
+      </tr>
+      <% }) %>
     </tbody>
   </table>
 </div>

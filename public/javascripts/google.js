@@ -7,7 +7,7 @@ function autocomplete() {
     document.getElementById("item-autocomplete")
   );
 
-  // add listener for the place_changed event on autcomplete
+  // add listener to get values for name and address
   autocomplete.addListener("place_changed", function () {
     const place = autocomplete.getPlace();
     document.getElementById("locationName").value = place.name;
