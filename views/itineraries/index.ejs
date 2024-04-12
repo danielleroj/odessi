@@ -9,8 +9,8 @@
     </tr>
     <tr>
       <td colspan="2">
-        <%= i.startDate.toLocaleDateString() %> - <%=
-        i.endDate.toLocaleDateString() %>
+        <%= new Date(i.startDate).toISOString().split('T')[0] %> - <%= new
+        Date(i.endDate).toISOString().split('T')[0] %>
       </td>
     </tr>
     <tr>

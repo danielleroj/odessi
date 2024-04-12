@@ -20,13 +20,13 @@
     <input
       type="date"
       name="startTime"
-      value="<%= new Date(item.startTime).toLocaleDateString('en-CA') %>"
+      value="<%= new Date(item.startTime).toISOString().split('T')[0] %>"
     /><br />
     <label>End Time</label><br />
     <input
       type="date"
       name="endTime"
-      value="<%= new Date(item.startTime).toLocaleDateString('en-CA') %>"
+      value="<%= new Date(item.startTime).toISOString().split('T')[0] %>"
     /><br />
     <label>Notes:</label><br />
     <textarea name="notes"><%= item.notes %></textarea>

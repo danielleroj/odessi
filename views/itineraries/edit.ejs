@@ -21,14 +21,14 @@
     <input
       type="date"
       name="startDate"
-      value="<%= new Date(itinerary.startDate).toLocaleDateString('en-CA') %>"
+      value="<%= new Date(itinerary.startDate).toISOString().split('T')[0] %>"
       required
     /><br />
     <label>End Date</label><br />
     <input
       type="date"
       name="endDate"
-      value="<%= new Date(itinerary.endDate).toLocaleDateString('en-CA') %>"
+      value="<%= new Date(itinerary.endDate).toISOString().split('T')[0] %>"
       required
     /><br />
     <label>Description</label><br />
