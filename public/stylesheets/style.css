@@ -117,6 +117,10 @@ nav ul li {
   height: 70vmin;
 }
 
+#itinerary-title {
+  text-align: left;
+}
+
 .details-container {
   display: flex;
   justify-content: center;
@@ -127,7 +131,7 @@ nav ul li {
   height: 70vmin;
 }
 
-#new-itinerary-form, table, .item-form-container {
+#new-itinerary-form, table {
   background-color: white;
   padding: 20px 40px;
   margin: 20px;
@@ -137,6 +141,21 @@ nav ul li {
          1px -1px 0 #000,
         -1px  1px 0 #000,
          1px  1px 0 #000; 
+  min-height: 40vmin;
+}
+
+#item-form-container {
+  background-color: white;
+  padding: 20px 40px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000; 
+  height: 47vmin;
+  width: 36vmin;
 }
 
 #details-view {
@@ -149,7 +168,8 @@ nav ul li {
          1px -1px 0 #000,
         -1px  1px 0 #000,
          1px  1px 0 #000; 
-  height: 46.5vmin;
+  height: 47.5vmin;
+  width: 50vmin;
   overflow-y: auto;
 }
 

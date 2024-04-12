@@ -4,26 +4,38 @@
 
 <h2>Craft Your Adventure</h2>
 <div class="form-container">
-     <form action="/itineraries" id="new-itinerary-form" method="POST">
-        <label>Trip Title</label><br>
-        <input type="text" name="title"><br>
-        <label>Destination</label><br>
-        <input id="location-input" type="text" name="location" placeholder="Enter a location"><br>
-        <div class="date-container">
-
-        <div class="date-field">
-            <label>Start Date</label><br>
-            <input type="date" name="startDate" required><br>
-        </div>
-        <div class="date-field">
-            <label>End Date</label><br>
-            <input type="date" name="endDate" required><br>
-        </div>
+  <form action="/itineraries" id="new-itinerary-form" method="POST">
+    <label>Trip Title</label><br />
+    <input type="text" name="title" /><br />
+    <label>Destination</label><br />
+    <input
+      id="autocomplete"
+      type="text"
+      name="location[name]"
+      placeholder="Enter a location"
+    /><br />
+    <input type="hidden" name="locationName" id="locationName" />
+    <input type="hidden" name="locationAddress" id="locationAddress">
+    <div class="date-container">
+      <div class="date-field">
+        <label>Start Date</label><br />
+        <input type="date" name="startDate" required /><br />
+      </div>
+      <div class="date-field">
+        <label>End Date</label><br />
+        <input type="date" name="endDate" required /><br />
+      </div>
     </div>
-        <label>Description</label><br>
-        <textarea name="description" cols="30" rows="3" placeholder="Best trip ever!"></textarea><br>
-        <button type="submit">Start Planning!</button>
-    </form>
+    <label>Description</label><br />
+    <textarea
+      name="description"
+      cols="30"
+      rows="3"
+      placeholder="Best trip ever!"
+    ></textarea
+    ><br />
+    <button type="submit">Start Planning!</button>
+  </form>
 </div>
 
 <%- include('../partials/footer') %>

@@ -1,66 +1,97 @@
 <%- include('../partials/header') %>
 
-
 <h2>It's All in the Details</h2>
 <div class="details-container">
   <div id="details-view">
-  <div>Title: </div>
-  <div><%= itinerary.title %></div><br>
-  <div>Location: </div>
-  <div><%= itinerary.location %></div><br>
-  <div>Start Date: </div>
-  <div><%= new Date(itinerary.startDate).toISOString().split('T')[0] %></div><br>
-  <div>End Date: </div>
-  <div><%= new Date(itinerary.endDate).toISOString().split('T')[0] %></div><br>
-  <div>Description: </div>
-  <div><%= itinerary.description %></div><br>
+    <div><h2 id="itinerary-title"><%= itinerary.title %></h2></div>
+    <div><%= itinerary.location.name %></div>
+    <div><%= itinerary.location.address %></div>
+    <br />
+    <div>
+      <%= new Date(itinerary.startDate).toISOString().split('T')[0] %> - <%= new
+      Date(itinerary.endDate).toISOString().split('T')[0] %>
+    </div>
+    <br />
+    <div>Description: <%= itinerary.description %></div>
+    <br />
 
-  <h3>Itinerary Items: </h3>
-  <% if (items.length)  { %>
-  <% items.forEach(item => { %>
-    <div>Name: </div>
-    <div><%= item.name %></div><br>
-    <div>Location: </div>
-    <div><%= item.location %></div><br>
-    <div>Start Time: </div>
-    <div><%= item.startTime %></div><br>
-    <div>End Time: </div>
-    <div><%= item.endTime %></div><br>
-    <div>Notes: </div>
-    <div><%= item.notes %></div><br>
-    <form action="/itineraries/<%= itinerary._id %>/items/<%= item._id %>?_method=DELETE" method="POST">
-      <input type="submit" value="Delete Item" onclick="return confirm('Are you sure you want to delete this item?')">
-      </form><br>
-  <% }); %>
-  <% } else { %>
-    <p>No items created</p>
-  <% } %><br><br>
+    <% if (Object.keys(groupedItems).length) { %> <%
+    Object.keys(groupedItems).forEach(date => { %>
+    <h3><%= date %></h3>
+    <% groupedItems[date].forEach(item => { %>
+    <div><h4><%= item.name %></h4></div>
+    <div><%= item.location %></div>
+    <div>
+      <%= new Date(item.startTime).toISOString().split('T')[0] %> - <%= new
+      Date(item.endTime).toISOString().split('T')[0] %>
+    </div>
+    <div>Notes: <%= item.notes %></div>
+    <br />
+    <form
+      action="/itineraries/<%= itinerary._id %>/items/<%= item._id %>?_method=DELETE"
+      method="POST"
+    >
+      <input
+        type="submit"
+        value="Delete Item"
+        onclick="return confirm('Are you sure you want to delete this item?')"
+      />
+    </form>
+    <br />
+    <% }); %> <% }) %> <% } else { %>
+    <p>
+      Well, it looks like your itinerary is as empty as a speakeasy on a Monday
+      night! Time to stir up some excitement and plan your next big adventure!
+    </p>
+    <% } %><br /><br />
   </div>
-  
-  <div class="item-form-container">
-    <h4>Add Items</h4>
-    <form action="/itineraries/<%= itinerary._id %>/items" id="new-item-form" method="POST">
-      <label>Item Name:</label>
-      <input type="text" placeholder="Optional" name="name"><br>
-      <label>Location:</label>
-      <input type="text" placeholder="The Lourve" name="location"><br>
-      <label>Start Time:</label>
-      <input type="date" name="startTime" min="<%= itinerary.startDate %>" max="<%= itinerary.endDate %>"><br>
-      <label>End Time:</label>
-      <input type="date" name="endTime"><br>
-      <label>Notes:</label><br>
-      <textarea placeholder="Arrive 15 minutes early..." name="notes"></textarea><br>
-      <input type="submit" value="Add Item"><br>
-   </form>
-</div>
 
-
+  <div id="item-form-container">
+    <h3>Add Items</h3>
+    <form
+      action="/itineraries/<%= itinerary._id %>/items"
+      id="new-item-form"
+      method="POST"
+    >
+      <label>Item Name</label><br />
+      <input type="text" placeholder="Optional" name="name" /><br />
+      <label>Location</label><br />
+      <input type="text" placeholder="The Lourve" name="location" /><br />
+      <div class="date-container">
+        <div class="date-field">
+          <label>Start Time</label>
+          <input
+            type="date"
+            name="startTime"
+            min="<%= itinerary.startDate %>"
+            max="<%= itinerary.endDate %>"
+          />
+        </div>
+        <div class="date-field">
+          <label>End Time</label><br />
+          <input type="date" name="endTime" />
+        </div>
+      </div>
+      <label>Notes</label><br />
+      <textarea placeholder="Arrive 15 minutes early..." name="notes"></textarea
+      ><br />
+      <input type="submit" value="Add Item" /><br />
+    </form>
+  </div>
 </div>
 <div id="itinerary-edit-delete">
   <a href="/itineraries/<%= itinerary._id %>/edit">Edit Itinerary</a>
-  <form id="delete-form" action="/itineraries/<%= itinerary._id %>?_method=DELETE" method="POST">
-  <input type="hidden" name="method" value="DELETE"> 
-  <input type="submit" value="Delete Itinerary" onclick="return confirm('Are you sure you want to delete this itinerary?')">
+  <form
+    id="delete-form"
+    action="/itineraries/<%= itinerary._id %>?_method=DELETE"
+    method="POST"
+  >
+    <input type="hidden" name="method" value="DELETE" />
+    <input
+      type="submit"
+      value="Delete Itinerary"
+      onclick="return confirm('Are you sure you want to delete this itinerary?')"
+    />
   </form>
 </div>
 <%- include('../partials/footer') %>

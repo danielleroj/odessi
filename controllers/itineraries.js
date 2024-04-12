@@ -54,10 +54,21 @@ async function show(req, res) {
   try {
     const itinerary = await Itinerary.findById(req.params.id).populate("items");
     const items = itinerary.items;
+
+    // group items by date
+    const groupedItems = items.reduce((acc, item) => {
+      const date = new Date(item.startTime).toISOString().split("T")[0];
+      if (!acc[date]) {
+        acc[date] = [];
+      }
+      acc[date].push(item);
+      return acc;
+    }, {});
+
     res.render("itineraries/show", {
       title: "Itinerary Details",
       itinerary,
-      items,
+      groupedItems,
     });
   } catch (error) {
     console.error("Error fetching itinerary details:", error);
@@ -71,6 +82,11 @@ function newItinerary(req, res) {
 async function create(req, res) {
   try {
     req.body.createdBy = req.user.googleId;
+    req.body.location = {
+      name: req.body.locationName,
+      address: req.body.locationAddress
+    };
+
     await Itinerary.create(req.body);
     res.redirect("/itineraries");
   } catch (error) {
