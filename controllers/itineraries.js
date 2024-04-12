@@ -31,8 +31,8 @@ async function update(req, res) {
 
 async function edit(req, res) {
   try {
-    const itinerary = await Itinerary.findById(req.params.id).populate("items");
-    
+    const itinerary = await Itinerary.findById(req.params.id);
+
     res.render("itineraries/edit", {
       title: "Edit Itinerary",
       itinerary: itinerary,
@@ -57,19 +57,13 @@ async function show(req, res) {
     const items = itinerary.items;
 
     // group items by date
-    const groupedItems = items.reduce((acc, item) => {
-      const date = new Date(item.startTime).toISOString().split("T")[0];
-      if (!acc[date]) {
-        acc[date] = [];
-      }
-      acc[date].push(item);
-      return acc;
-    }, {});
+    items.sort((a, b) => new Date(a.startTime) - new Date(b.startTime));
+
 
     res.render("itineraries/show", {
       title: "Itinerary Details",
       itinerary,
-      groupedItems,
+      items,
     });
   } catch (error) {
     console.error("Error fetching itinerary details:", error);
@@ -85,7 +79,7 @@ async function create(req, res) {
     req.body.createdBy = req.user.googleId;
     req.body.location = {
       name: req.body.locationName,
-      address: req.body.locationAddress
+      address: req.body.locationAddress,
     };
 
     await Itinerary.create(req.body);

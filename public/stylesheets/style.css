@@ -158,7 +158,7 @@ nav ul li {
   width: 36vmin;
 }
 
-#details-view, #edit-itinerary-form {
+#details-view, .edit-form {
   background-color: white;
   padding: 20px 40px;
   margin: 20px;
@@ -193,12 +193,12 @@ nav ul li {
   font-weight: bold;
 }
 
-#details-view::-webkit-scrollbar, #edit-itinerary-form::-webkit-scrollbar {
+#details-view::-webkit-scrollbar {
   background-color: transparent;
   width: 10px;
 }
 
-#details-view::-webkit-scrollbar-thumb, #edit-itinerary-form::-webkit-scrollbar-thumb {
+#details-view::-webkit-scrollbar-thumb {
   border-radius: 20px;
   background-color: #294264;
 }

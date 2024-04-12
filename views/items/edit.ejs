@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+<h2>Edit Item</h2>
+<div class="form-container">
+  <form action="/itineraries/<%= itineraryId %>/items/<%= item._id %>?_method=PUT"  class="edit-form" method="POST">
+    <label>Item Name:</label><br />
+  <input
+    type="text"
+    name="name"
+    value="<%= item.name %>"
+  /><br />
+  <label>Location:</label><br />
+  <input
+    type="text"
+    name="location"
+    value="<%= item.location %>"
+  /><br />
+  <label>Start Time:</label>
+  <input
+    type="date"
+    name="startTime"
+    value="<%= new Date(item.startTime).toLocaleDateString('en-CA') %>"
+  />
+  <label>End Time:</label>
+  <input
+    type="date"
+    name="endTime"
+    value="<%= new Date(item.startTime).toLocaleDateString('en-CA') %>"
+  /><br />
+  <label>Notes:</label><br>
+  <textarea name="notes"><%= item.notes %></textarea>
+  <br />
+  <button type="submit">Update Trip</button>
+  </form>
+</div>
+
+<%- include('../partials/footer') %>

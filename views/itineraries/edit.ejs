@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
 
+<h2>Edit Itinerary Info</h2>
 <div class="form-container">
-    <% if (itinerary) { %>
   <form
     action="/itineraries/<%= itinerary.id %>?_method=PUT"
-    id="edit-itinerary-form"
+    class="edit-form"
     method="POST"
     autocomplete="off"
   >
@@ -28,38 +28,7 @@
     <textarea name="description" id="" cols="30" rows="3">
 <%= itinerary.description %></textarea
     ><br />
-    <% } %>
-
-    <% if (itinerary.items && itinerary.items.length > 0) { %> <%
-    itinerary.items.forEach(function(item) { %>
-    <label>Item Name:</label><br />
-    <input
-      type="text"
-      name="items[<%= item._id %>][name]"
-      value="<%= item.name %>"
-    /><br />
-    <label>Location:</label><br />
-    <input
-      type="text"
-      name="items[<%= item._id %>][location]"
-      value="<%= item.location %>"
-    /><br />
-    <label>Start Time:</label>
-    <input
-      type="date"
-      name="items[<%= item._id %>][startTime]"
-      value="<%= new Date(item.startTime).toLocaleDateString('en-CA') %>"
-    />
-    <label>End Time:</label>
-    <input
-      type="date"
-      name="items[<%= item._id %>][endTime]"
-      value="<%= new Date(item.startTime).toLocaleDateString('en-CA') %>"
-    /><br />
-    <label>Notes:</label>
-    <textarea name="items[<%= item._id %>][notes]"><%= item.notes %></textarea>
-    <% }) %> <% } %><br />
-    <button type="submit">Submit</button>
+    <button type="submit">Edit Itinerary Info</button>
   </form>
 </div>
 

@@ -15,10 +15,7 @@
     <div>Description: <%= itinerary.description %></div>
     <br />
 
-    <% if (Object.keys(groupedItems).length) { %> <%
-    Object.keys(groupedItems).forEach(date => { %>
-    <h3><%= date %></h3>
-    <% groupedItems[date].forEach(item => { %>
+    <% if (items.length) { %> <% items.forEach(item => { %>
     <div><h4><%= item.name %></h4></div>
     <div><%= item.location %></div>
     <div>
@@ -27,6 +24,9 @@
     </div>
     <div>Notes: <%= item.notes %></div>
     <br />
+    <a href="/itineraries/<%= itinerary._id %>/items/<%= item._id %>/edit"
+      >Edit Item</a
+    >  
     <form
       action="/itineraries/<%= itinerary._id %>/items/<%= item._id %>?_method=DELETE"
       method="POST"
@@ -36,9 +36,10 @@
         value="Delete Item"
         onclick="return confirm('Are you sure you want to delete this item?')"
       />
+      <% }) %>
     </form>
     <br />
-    <% }); %> <% }) %> <% } else { %>
+    <% } else { %>
     <p>
       Well, it looks like your itinerary is as empty as a speakeasy on a Monday
       night! Time to stir up some excitement and plan your next big adventure!
@@ -79,6 +80,7 @@
     </form>
   </div>
 </div>
+
 <div id="itinerary-edit-delete">
   <a href="/itineraries/<%= itinerary._id %>/edit">Edit Itinerary</a>
   <form

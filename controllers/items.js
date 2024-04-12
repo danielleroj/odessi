@@ -23,29 +23,29 @@ async function create(req, res) {
   }
 }
 
+async function update(req, res) {
+  await Item.findByIdAndUpdate(req.params.id, req.body);
+  res.redirect(`/itineraries/${req.params.itineraryId}`);
+}
+
 async function edit(req, res) {
   try {
     const item = await Item.findById(req.params.id);
-    const itinerary = await Itinerary.findById
-    res.render("itineraries/edit", { item })
+    const itineraryId = req.params.itineraryId;
+    res.render("items/edit", { title: "Edit Item", item, itineraryId })
   } catch (error) {
     console.error(error);
   }
 }
 
-async function update(req, res) {
-  await Item.findByIdAndUpdate(req.params.id, req.body);
-  res.redirect(`/itineraries/${req.params.itineraryId}`)
-}
-
 async function deleteItem(req, res) {
   console.log(req.method);
   try {
-   await Item.findByIdAndDelete(req.params.id);
+    await Item.findByIdAndDelete(req.params.id);
 
-  await Itinerary.findByIdAndUpdate(req.params.itineraryId, {
-    $pull: { items: req.params.id }
-  });
+    await Itinerary.findByIdAndUpdate(req.params.itineraryId, {
+      $pull: { items: req.params.id },
+    });
 
     res.redirect(`/itineraries/${req.params.itineraryId}`);
   } catch (error) {
