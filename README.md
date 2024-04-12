@@ -45,3 +45,4 @@ Odessi is a web application designed to streamline the process of planning and o
 - [ ] Allow users to save/bookmark destinations for future reference. 
 - [ ] Allow users to provide feedback to places they've been for other users to see. 
 - [ ] Allow users to view other user's public itineraries. 
+- [ ] Add more design and animation. 
