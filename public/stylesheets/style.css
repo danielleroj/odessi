@@ -72,7 +72,7 @@ nav ul li {
 
 .avatar {
   border-radius: 50%;
-  height: 2.5vmin;
+  height: 5vmin;
   margin-right: 10px;
 }
 
@@ -211,7 +211,7 @@ nav ul li {
   width: 36vmin;
 }
 
-#item-form-container input[type="submit"] {
+#item-form-container input[type="submit"], .form-container button {
   display: block;
   margin: 20px auto;
 }
@@ -320,5 +320,14 @@ footer {
   }
   #edit-button {
     white-space: nowrap;
+  }
+  nav li {
+    float: left;
+  }
+  .avatar {
+    height: 8vmin;
+  }
+  #welcome-user p {
+    display: none;
   }
 }
