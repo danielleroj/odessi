@@ -188,6 +188,11 @@ nav ul li {
 
 #itinerary-table-message {
   text-align: center;
+  padding: 5vmin;
+}
+
+#itinerary-table-message img {
+  width: 20vmin;
 }
 
 #item-form-container {
