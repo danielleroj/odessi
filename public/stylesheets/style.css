@@ -132,7 +132,7 @@ nav ul li {
   background-image: url("/images/kiwihug-qv05FvdE26k-unsplash.jpg");
   background-size: cover;
   padding: 20px;
-  height: 70vmin;
+  /* height: 70vmin; */
 }
 
 .details-container a {
@@ -196,6 +196,8 @@ nav ul li {
 }
 
 #item-form-container {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   padding: 20px 40px;
   margin: 20px;
@@ -207,6 +209,11 @@ nav ul li {
          1px  1px 0 #000; 
   min-height: 47vmin;
   width: 36vmin;
+}
+
+#item-form-container input[type="submit"] {
+  display: block;
+  margin: 20px auto;
 }
 
 #details-view, .edit-form {
@@ -297,9 +304,21 @@ footer {
   text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
-  body {
-    padding: 0 10vmin;
-    margin: auto;
+@media (max-width: 768px) {
+  .details-container {
+    flex-direction: column;
+    flex: 1;
+  }
+  #details-view, .edit-form {
+    height: 100vmin;
+  }
+  #item-form-container {
+    width: 50vmin;
+  }
+  #delete-button {
+    width: 100px;
+  }
+  #edit-button {
+    white-space: nowrap;
   }
 }
